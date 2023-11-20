@@ -1,0 +1,85 @@
+class MainClass
+{
+    static void Main(string[] args)
+    {
+        int[] array2; //= {-2, 3, -4, 7 };
+        int[] array3; // = {9, 45, -5, -25 };
+
+        SortArray(out array2, out array3);
+        
+
+
+    }
+
+    static void SortArray( out int[] sorteddesc, out int[] sortedasc)
+    {
+   
+        int[] foksi = new int[10];
+
+        for (int i = 0; i < foksi.Length; i++)
+        {
+            Console.WriteLine("Введите элемент массива {0}", i + 1);
+            foksi[i] = int.Parse(Console.ReadLine());
+
+        }   
+        sortedasc = SortArrayAsc(foksi);
+
+        for (int i = 0; i < sortedasc.Length; i++)
+        {
+            Console.Write(sortedasc[i] + " ");
+        }
+        Console.WriteLine();
+
+        sorteddesc = SortArrayDesc(foksi);
+
+        for (int i = 0; i < sorteddesc.Length; i++)
+        {
+            Console.Write(sorteddesc[i] + " ");
+        }
+    }
+
+
+    static int[] SortArrayAsc(int[] sortedasc)
+    {
+        int temp;
+
+        for (int i = 0; i < sortedasc.Length; i++)
+        {
+            for (int j = i + 1; j < sortedasc.Length; j++)
+            {
+                if (sortedasc[i] > sortedasc[j])
+                {
+                    temp = sortedasc[i];
+                    sortedasc[i] = sortedasc[j];
+                    sortedasc[j] = temp;
+
+                }
+            }
+
+        }
+        
+        return sortedasc;
+
+    }
+
+    static int[] SortArrayDesc(int[] sorteddesc)
+    {
+        int temp;
+
+        for (int i = 0; i < sorteddesc.Length; i++)
+        {
+            for (int j = i + 1; j < sorteddesc.Length; j++)
+            {
+                if (sorteddesc[i] < sorteddesc[j])
+                {
+                    temp = sorteddesc[i];
+                    sorteddesc[i] = sorteddesc[j];
+                    sorteddesc[j] = temp;
+                }
+            }
+        }
+
+        return sorteddesc;
+    }
+
+} 
