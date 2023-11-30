@@ -1,0 +1,35 @@
+class Pen
+{
+
+    public string color;
+    public int cost;
+
+   
+    static void Main(string[] args)
+    {
+        Pen pen = new Pen();
+        pen.Open();
+
+        pen = new Pen("Черный", 100);
+        pen.Open();
+    }
+     
+    
+    public void Open()
+    {
+        Console.WriteLine("Цвет {0} , расход цвета {1}", cost, color);
+    }
+
+    public Pen()
+    {
+        color = "Черный";
+        cost = 100;
+    }
+
+    public Pen(string penColor, int penCost)
+    {
+        color = penColor;
+        cost = penCost;
+    }
+
+    
