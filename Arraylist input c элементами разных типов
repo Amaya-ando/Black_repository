@@ -1,0 +1,58 @@
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Обьявим ArrayList c элементами разных типов
+
+            var arrayList = new ArrayList()
+            {
+
+                1,
+                "Андрей",
+                "Сергей",
+                300,
+
+            };
+
+            //переменная для хранения суммы
+            int sum = 0;
+
+            //переменная для хранения текста.
+            //Можно использовать string, но в случае когда необходимо выполнить много
+            //операция с одной строкой - лучше использовать класс - StringBuilder
+
+            StringBuilder text = new StringBuilder();
+
+            //проходим список и проверяем элементы на соответствие типу
+            
+            foreach ( var element in arrayList )
+            {
+                
+                //если целое число - увеличиваем счетчик
+
+                if (element is int)
+                {
+                    sum += (int)element;
+                }
+
+                //если строка - добавляем текст из нее
+
+                if (element is string s)
+                {
+                    text.Append(element);
+                }
+
+                //результат
+
+                var result = new ArrayList() { sum, text.ToString() };
+
+                //вывод
+
+                foreach (var elem in result )
+                {
+                    Console.WriteLine(elem);
+                }
+            }
+        }
+    }
+}
